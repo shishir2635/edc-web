@@ -9,7 +9,34 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!-- jquery -->
   	<!-- all things are linked over the net , no local folder for js -->
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
+<script src="js/jquery-sectionsnap.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+$(".main").sectionsnap({
+
+// time dilay (ms)
+'delay': 100,
+
+// selector
+'selector': ".section",
+
+// % of window height from which we start
+'reference': .9,
+
+// animation time (snap scrolling)
+'animationTime': 400,
+
+// offset top (no snap before scroll reaches this position)
+'offsetTop': 0,
+
+// offset bottom (no snap after bottom - offsetBottom)
+'offsetBottom': 0
+});
+});
+
+</script>
 
 <style> 
 .navbar{
@@ -57,9 +84,10 @@
  }
 </style>
 
+</head>
 <body>
 <!--navbar starts here -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -90,8 +118,9 @@
 </nav>
 
 <!-- navbar ends here -->
+<div class="main">
 <!-- image carousel begins from here time = 11:18 pm -->
-<div id="carousel" class="carousel slide" data-ride="carousel">
+<div id="carousel" class="section carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -125,7 +154,7 @@
 <!-- image carousel ensds here -->
 
 <!-- About Us element -->
-<div class="container text-center">
+<div class="section container text-center">
 	<div class="row">
 		<div class="col-md-12">
 			<h2>About Us</h2>
@@ -142,6 +171,7 @@
 	
 </div>
 <!-- About Us elements end -->
+</div>
 </body>
 
 </html>
