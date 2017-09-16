@@ -10,6 +10,7 @@
   	<!-- all things are linked over the net , no local folder for js -->
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<link rel="stylesheet" href="css/animate.css">
 <script src="js/jquery-sectionsnap.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -36,6 +37,17 @@ $(".main").sectionsnap({
 });
 });
 
+$(function(){
+    var hasBeenTrigged = false;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 300 && !hasBeenTrigged) {
+            $('#aboutDesc').addClass('animated bounceInDown');
+            $('#aboutImg').addClass('animated bounceInLeft');
+            $('#aboutStep').addClass('animated bounceInRight');
+            hasBeenTrigged = true;
+        }
+    });
+});
 </script>
 
 <style> 
@@ -156,14 +168,14 @@ $(".main").sectionsnap({
 		<div class="col-md-12">
 			<h2>About Us</h2>
 			<hr>
-			<p>E-Cell, JSSATE Noida assists budding entrepreneurs by lending them a platform to materialise an ‘IDEA’ to a ‘PRODUCT’. Big time, you little wizards personify to successful businessmen upholding entrepreneurship as a career option and set a razzle-dazzle innovative exemplar. JSS E-Cell is a non-profit organisation which will act as a platform for association of likeminded students who would eventually loom as “employment creators” rather than “employment seekers”.</p>
+			<p id="aboutDesc">E-Cell, JSSATE Noida assists budding entrepreneurs by lending them a platform to materialise an ‘IDEA’ to a ‘PRODUCT’. Big time, you little wizards personify to successful businessmen upholding entrepreneurship as a career option and set a razzle-dazzle innovative exemplar. JSS E-Cell is a non-profit organisation which will act as a platform for association of likeminded students who would eventually loom as “employment creators” rather than “employment seekers”.</p>
 			<br>
 		</div>
 		<div class="col-md-6">
-			<img src="media/work.png" class="img-responsive">
+			<img src="media/work.png" id="aboutImg" class="img-responsive">
 		</div>
 		<div class="col-md-6" style="text-align: left;">
-			<ul style="list-style-type: none;">
+			<ul style="list-style-type: none;" id="aboutStep">
 				<li><img src="media/step.png"> &nbsp; Small and Medium enterprises play a vital role for the growth of Indian economy by contributing 45% of the industrial output, 40% of exports ,42 million in employment, creates 1 million jobs every year and produces more than 8000 quality products for the Indian and International markets.</li>
 				<li><img src="media/step.png"> &nbsp; In the present scenario of low economic growth, less industrial production on one hand while on the other hand, thousands of students passing out of colleges without proper employment opportunities possess a serious threat to the stability and growth of our country.
 </li>
